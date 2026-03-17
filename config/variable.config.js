@@ -61,13 +61,16 @@ module.exports.statusList = [
   {
     label: "Khởi tạo",
     value: "initial",
+    color: "orange",
   },
   {
     label: "Hoàn thành",
     value: "done",
+    color: "green",
   },
   {
     label: "Đã hủy",
     value: "cancel",
+    color: "red",
   },
 ];
