@@ -8,4 +8,12 @@ router.get("/edit/:id", orderController.edit);
 
 router.patch("/edit/:id", orderValidate.editPatch, orderController.editPatch);
 
+router.get("/trash", orderController.trash);
+
+router.patch("/delete/:id", orderController.deletePatch);
+
+router.patch("/undo/:id", orderController.undoPatch);
+
+router.delete("/destroy/:id", orderController.destroyDelete);
+
 module.exports = router;
