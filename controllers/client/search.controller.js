@@ -87,9 +87,15 @@ module.exports.list = async (req, res) => {
     };
     // Hết Phân trang
 
-    const tourList = await Tour.find(find).limit(limitItems).skip(skip).sort({
-      priceNewAdult: req.query.sortPrice,
-    });
+    const sort = {};
+    if (req.query.sortPrice) {
+      sort = req.query.sortPrice;
+    }
+
+    const tourList = await Tour.find(find)
+      .limit(limitItems)
+      .skip(skip)
+      .sort(sort);
 
     for (const item of tourList) {
       item.discount = Math.floor(
